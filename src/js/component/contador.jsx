@@ -52,11 +52,20 @@ class CounterCard extends React.Component {
         </div>
       </div>
     ));
+    cards.unshift(
+      <div key="clock" className="card m-2" style={{ width: "3rem",backgroundColor: "black", color: "white" }}>
+        <div className="card-body">
+          <i className="fas fa-clock"></i>
+        </div>
+      </div>
+    );
 
     return (
       <div>
         <h2>Contador</h2>
-        <div className="d-flex flex-row p-5" style={{ marginLeft: "275px" }}>{cards} </div>
+        <div className="d-flex flex-row p-5" style={{ marginLeft: "275px" }}>
+          {cards}{" "}
+        </div>
       </div>
     );
   }
