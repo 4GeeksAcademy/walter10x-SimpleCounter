@@ -7,7 +7,7 @@ import StartCounter from "./contador";
 const Home = () => {
   return (
     <div className="text-center">
-      <StartCounter /> 
+      <h1>hola walter</h1> 
       <p>
         Made by <a href="http://www.4geeksacademy.com">Walter Rivero</a>, with
         love!
