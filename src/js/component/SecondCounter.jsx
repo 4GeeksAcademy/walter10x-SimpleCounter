@@ -1,49 +1,26 @@
 import React from "react";
+import DigitCard from "./DigitCard";
 
 const SecondCounter = (props) => {
-  // Obtener los valores de unidades, decenas, centenas, unidades de mil, decenas de mil y centenas de mil
-  const unidades = props.seconds % 10;
-  const decenas = Math.floor((props.seconds % 100) / 10);
-  const centenas = Math.floor((props.seconds % 1000) / 100);
-  const unidadesDeMil = Math.floor((props.seconds % 10000) / 1000);
-  const decenasDeMil = Math.floor((props.seconds % 100000) / 10000);
-  const centenasDeMil = Math.floor((props.seconds % 1000000) / 100000);
+  const numero = props.seconds;
 
-  // Lógica para ajustar los valores de las decenas de mil y unidades de mil
-  let ajusteDecenasDeMil = decenasDeMil;
-  let ajusteCentenasDeMil = centenasDeMil;
-  let ajusteUnidadesDeMil = unidadesDeMil;
-  if (decenasDeMil > 9) {
-    ajusteDecenasDeMil = 1;
-    ajusteCentenasDeMil = 0;
-    ajusteUnidadesDeMil = 0;
-  } else if (centenasDeMil > 9) {
-    ajusteCentenasDeMil = 1;
-    ajusteUnidadesDeMil = 0;
-  }
+  const unidades = numero % 10;
+  const decenas = Math.floor(numero / 10) % 10;
+  const centenas = Math.floor(numero / 100) % 10;
+  const unidadesDeMil = Math.floor(numero / 1000) % 10;
+  const decenasDeMil = Math.floor(numero / 10000) % 10;
+  const centenasDeMil = Math.floor(numero / 100000) % 10;
 
   return (
     <div className="container">
-      <div className="row">
-        <h2>{props.seconds}</h2>
-        <div className="col">
-          <h1>{ajusteCentenasDeMil}</h1>
-        </div>
-        <div className="col">
-          <h1>{ajusteDecenasDeMil}</h1>
-        </div>
-        <div className="col">
-          <h1>{ajusteUnidadesDeMil}</h1>
-        </div>
-        <div className="col">
-          <h1>{centenas}</h1>
-        </div>
-        <div className="col">
-          <h1>{decenas}</h1>
-        </div>
-        <div className="col">
-          <h1>{unidades}</h1>
-        </div>
+      <div className="row justify-content-center">
+        <DigitCard icon="fas fa-clock" />
+        <DigitCard value={centenasDeMil} />
+        <DigitCard value={decenasDeMil} />
+        <DigitCard value={unidadesDeMil} />
+        <DigitCard value={centenas} />
+        <DigitCard value={decenas} />
+        <DigitCard value={unidades} />
       </div>
     </div>
   );

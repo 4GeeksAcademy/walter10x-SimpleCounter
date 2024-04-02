@@ -1,1 +1,21 @@
+.digit-card {
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgb(29, 28, 28);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  color: rgb(232, 238, 232);
+  width: 100px;
+  font-size: 70px;
+  margin-left: 3px;
+  height: 140px;
+}
 
+.row {
+  margin-left: 175px;
+  margin-top: 40px;
+  background-color: black;
+  width: 850px;
+  height: 160px;
+  padding: 10px;
+}
